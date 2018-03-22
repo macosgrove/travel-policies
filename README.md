@@ -2,7 +2,13 @@
 
 This app provides travellers with quotes for their travel insurance policies.
 
-## Run the test suite
+## Run the system tests
+
+```shell
+rails test:system
+```
+
+## Run the unit tests
 
 ```shell
 rails test
