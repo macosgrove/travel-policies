@@ -2,6 +2,14 @@
 
 This app provides travellers with quotes for their travel insurance policies.
 
+## Getting started
+
+You'll need to set up the DB:
+
+```shell
+rails db:migrate
+```
+
 ## Run the system tests
 
 ```shell

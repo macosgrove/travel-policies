@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @quote.age %>
+</p>
+
+<p>
+  <strong>Trip length:</strong>
+  <%= @quote.trip_length %>
+</p>
+
+<p>
+  <strong>Quote cents:</strong>
+  <%= @quote.quote_cents %>
+</p>
+
+<p>
+  <strong>Quote currency:</strong>
+  <%= @quote.quote_currency %>
+</p>
+
+<%= link_to 'Edit', edit_quote_path(@quote) %> |
+<%= link_to 'Back', quotes_path %>
