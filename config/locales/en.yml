@@ -30,4 +30,12 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  quote_heading: 'How much will my travel insurance cost?'
+  date_ranges:
+    up_to_7: 'Up to 7 days'
+    _8_to_14: '8 to 14 days'
+    _15_to_21: '15 to 21 days'
+    over_21: '22 days or over'
+  age_of_traveller: 'Age of Traveller'
+  trip_length: 'Length of Trip'
+  get_quote: 'Get Quote'
