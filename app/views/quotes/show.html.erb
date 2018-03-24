@@ -1,23 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Age:</strong>
-  <%= @quote.age %>
-</p>
+<h1><%= t('give_quote_heading') %></h1>
 
 <p>
-  <strong>Trip length:</strong>
-  <%= @quote.trip_length %>
-</p>
-
-<p>
-  <strong>Quote cents:</strong>
-  <%= @quote.quote_cents %>
-</p>
-
-<p>
-  <strong>Quote currency:</strong>
-  <%= @quote.quote_currency %>
+  <%= t('give_quote',
+         trip_length: min_days_to_trip_length_description(@quote.trip_length).downcase,
+         traveller_age: @quote.age,
+         formatted_quote: @quote.formatted_quote) %>
 </p>
 
 <%= link_to 'Edit', edit_quote_path(@quote) %> |

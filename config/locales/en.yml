@@ -39,3 +39,5 @@ en:
   age_of_traveller: 'Age of Traveller'
   trip_length: 'Length of Trip'
   get_quote: 'Get Quote'
+  give_quote: "A trip of %{trip_length} for a traveller aged %{traveller_age} will cost %{formatted_quote}"
+  give_quote_heading: "Here's your quote"

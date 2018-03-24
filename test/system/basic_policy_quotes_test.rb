@@ -9,7 +9,7 @@ class BasicPolicyQuotesTest < ApplicationSystemTestCase
     select('Up to 7 days', :from=>:trip_length)
     click_on "Get Quote"
 
-    # assert_selector "h1", text: "Here's your quote"
-    # assert_text "A trip of up to 7 days for a traveller aged 51 will cost $60.00"
+    assert_selector "h1", text: "Here's your quote"
+    assert_text "A trip of up to 7 days for a traveller aged 51 will cost $60.00 AUD"
   end
 end

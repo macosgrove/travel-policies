@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  age: 1
-  trip_length: 9.99
-  quote_cents: 1
-  quote_currency: MyString
+  age: 27
+  trip_length: 15
+  quote_cents: 60_00
+  quote_currency: AUD
 
 two:
-  age: 1
-  trip_length: 9.99
-  quote_cents: 1
-  quote_currency: MyString
+  age: 18
+  trip_length: 8
+  quote_cents: 60_00
+  quote_currency: AUD
