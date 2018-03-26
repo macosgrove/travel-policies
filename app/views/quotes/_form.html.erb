@@ -1,0 +1,33 @@
+<%= form_with(model: quote, local: true) do |form| %>
+  <% if quote.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(quote.errors.count, "error") %> prohibited this quote from being saved:</h2>
+
+      <ul>
+      <% quote.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :age, t(:age_of_traveller) %>
+    <%= form.number_field :age, id: :quote_age %>
+  </div>
+
+  <div class="field">
+    <%= form.label :trip_length, t(:trip_length) %>
+    <%= form.select(
+            :trip_length,
+            options_for_select(quote_trip_lengths),
+            {},
+            id: :trip_length,
+            )
+    %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit t(:get_quote) %>
+  </div>
+<% end %>

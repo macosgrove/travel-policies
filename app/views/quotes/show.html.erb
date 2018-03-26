@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= t('give_quote_heading') %></h1>
+
+<p>
+  <%= t('give_quote',
+         trip_length: min_days_to_trip_length_description(@quote.trip_length).downcase,
+         traveller_age: @quote.age,
+         formatted_quote: @quote.formatted_quote) %>
+</p>
+
+<%= link_to 'Edit', edit_quote_path(@quote) %> |
+<%= link_to 'Back', quotes_path %>

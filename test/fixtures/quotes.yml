@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  age: 27
+  trip_length: 15
+  quote_cents: 60_00
+  quote_currency: AUD
+
+two:
+  age: 18
+  trip_length: 8
+  quote_cents: 60_00
+  quote_currency: AUD
