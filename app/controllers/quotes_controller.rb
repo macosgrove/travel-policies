@@ -24,13 +24,8 @@ class QuotesController < ApplicationController
   # POST /quotes
   # POST /quotes.json
   def create
-    quote_amount = Money.new(60_00, 'AUD')
-    @quote = Quote.new(
-      age: quote_params[:age],
-      trip_length: quote_params[:trip_length],
-      quote_cents: quote_amount.cents,
-      quote_currency: quote_amount.currency
-    )
+    result = CalculateQuote.call(quote_params)
+    @quote = result.quote
 
     respond_to do |format|
       if @quote.save
