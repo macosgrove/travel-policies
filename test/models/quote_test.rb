@@ -9,7 +9,6 @@ class QuoteTest < ActiveSupport::TestCase
   test 'it stores the quote cents and currency in the database and restores the Money quote when it is read' do
     quote = Quote.new(age: 53, trip_length: 14, quote_cents: 15_21, quote_currency: 'USD')
     quote.save!
-    quote_from_db = Quote.find(quote.id)
-    assert_equal '$15.21 USD', quote_from_db.formatted_quote
+    assert_equal '$15.21 USD', quote.reload.formatted_quote
   end
 end
