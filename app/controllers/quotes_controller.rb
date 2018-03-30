@@ -24,7 +24,7 @@ class QuotesController < ApplicationController
   # POST /quotes
   # POST /quotes.json
   def create
-    result = CalculateQuote.call(quote_params)
+    result = BuildQuote.call(quote_params.merge(quote_currency: 'AUD')) # Eventually currency will be selected by the user
     @quote = result.quote
 
     respond_to do |format|
