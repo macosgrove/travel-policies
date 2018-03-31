@@ -11,4 +11,10 @@ class QuoteTest < ActiveSupport::TestCase
     quote.save!
     assert_equal '$15.21 USD', quote.reload.formatted_quote
   end
+
+  test 'it validates the presence of all fields' do
+    quote = Quote.new
+    assert_not quote.valid?
+    assert_equal [:age, :trip_length, :quote_cents, :quote_currency], quote.errors.keys
+  end
 end
