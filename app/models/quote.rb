@@ -1,5 +1,6 @@
 class Quote < ApplicationRecord
   def formatted_quote
-    '$60.00 AUD'
+    @quote ||= Money.new(quote_cents, quote_currency)
+    @quote.format(:with_currency => true)
   end
 end
