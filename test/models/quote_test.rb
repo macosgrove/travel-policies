@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 
 class QuoteTest < ActiveSupport::TestCase
@@ -15,6 +17,6 @@ class QuoteTest < ActiveSupport::TestCase
   test 'it validates the presence of all fields' do
     quote = Quote.new
     assert_not quote.valid?
-    assert_equal [:age, :trip_length, :quote_cents, :quote_currency], quote.errors.keys
+    assert_equal %i[age trip_length quote_cents quote_currency], quote.errors.keys
   end
 end
