@@ -15,4 +15,16 @@ class QuotesFlowTest < ApplicationSystemTestCase
     assert_selector "h1", text: "Here's your quote"
     assert_text 'A trip of up to 7 days for a traveller aged 69 will cost $70.00 AUD'
   end
+
+  test 'Get quote, then return for a second quote' do
+    visit new_quote_path
+
+    fill_in "Age of Traveller", with: "35"
+    select('8 to 14 days', :from=>:trip_length)
+    click_on "Get Quote"
+    assert_selector "h1", text: "Here's your quote"
+
+    click_on "Get Another Quote"
+    assert_selector "h1", text: "How much will my travel insurance cost?"
+  end
 end
