@@ -11,6 +11,10 @@
     </div>
   <% end %>
 
+  <% if flash[:error] %>
+    <div class="error"><%= flash[:error] %></div>
+  <% end %>
+
   <div class="field">
     <%= form.label :age, t(:age_of_traveller) %>
     <%= form.number_field :age, id: :quote_age %>
