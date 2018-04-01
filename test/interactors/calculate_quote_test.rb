@@ -64,13 +64,13 @@ class CalculateQuoteTest < ActiveSupport::TestCase
 
   test_expectations.each do |te|
     test "calculates the amount of the quote when age is #{te.age} and trip length is #{te.trip_length}" do
-      result = CalculateQuote.call(age: te.age, trip_length: te.trip_length, quote_currency: 'AUD')
-      assert_equal te.quote_cents, result.quote_cents
+      result = CalculateQuote.call(quote: Quote.new(age: te.age, trip_length: te.trip_length, quote_currency: 'AUD'))
+      assert_equal te.quote_cents, result.quote.quote_cents
     end
   end
 
   test "fails if the quote is not found" do
-    result = CalculateQuote.call(age: 0, trip_length: 0, quote_currency: 'AUD')
+    result = CalculateQuote.call(quote: Quote.new(age: 0, trip_length: 0, quote_currency: 'AUD'))
     assert_equal 'No quote available for age 0, trip length 0.', result.error
   end
 end

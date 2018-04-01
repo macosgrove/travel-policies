@@ -2,7 +2,8 @@ class CalculateQuote
   include Interactor
 
   def call
-    context.quote_cents = lookup_quote(context.age, context.trip_length)
+    quote = context.quote
+    quote.quote_cents = lookup_quote(quote.age, quote.trip_length)
   end
 
   private

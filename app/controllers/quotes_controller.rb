@@ -27,12 +27,11 @@ class QuotesController < ApplicationController
     result = BuildQuote.call(quote_params.merge(quote_currency: 'AUD')) # Eventually currency will be selected by the user
 
     respond_to do |format|
+      @quote = result.quote
       if result.success?
-        @quote = result.quote
         format.html { redirect_to @quote, notice: 'Quote was successfully created.' }
         format.json { render :show, status: :created, location: @quote }
       else
-        @quote = result.quote || Quote.new
         flash[:error] = result.error
         format.html { render :new }
         format.json { render json: result.error, status: :unprocessable_entity }

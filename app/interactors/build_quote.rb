@@ -1,5 +1,5 @@
 class BuildQuote
   include Interactor::Organizer
 
-  organize SanitiseParams, ValidateAge, CalculateQuote, CreateQuote
+  organize CreateQuote, SanitiseParams, ValidateAge, CalculateQuote, SaveQuote
 end
