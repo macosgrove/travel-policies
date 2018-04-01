@@ -68,4 +68,9 @@ class CalculateQuoteTest < ActiveSupport::TestCase
       assert_equal te.quote_cents, result.quote_cents
     end
   end
+
+  test "fails if the quote is not found" do
+    result = CalculateQuote.call(age: 0, trip_length: 0, quote_currency: 'AUD')
+    assert_equal 'No quote available for age 0, trip length 0.', result.error
+  end
 end
