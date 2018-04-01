@@ -27,22 +27,4 @@ class QuotesControllerTest < ActionDispatch::IntegrationTest
     get quote_url(@quote)
     assert_response :success
   end
-
-  test "should get edit" do
-    get edit_quote_url(@quote)
-    assert_response :success
-  end
-
-  test "should update quote" do
-    patch quote_url(@quote), params: { quote: { age: @quote.age, quote_cents: @quote.quote_cents, quote_currency: @quote.quote_currency, trip_length: @quote.trip_length } }
-    assert_redirected_to quote_url(@quote)
-  end
-
-  test "should destroy quote" do
-    assert_difference('Quote.count', -1) do
-      delete quote_url(@quote)
-    end
-
-    assert_redirected_to quotes_url
-  end
 end

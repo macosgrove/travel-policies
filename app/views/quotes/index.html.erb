@@ -10,7 +10,7 @@
       <th>Trip length</th>
       <th>Quote cents</th>
       <th>Quote currency</th>
-      <th colspan="3"></th>
+      <th></th>
     </tr>
   </thead>
 
@@ -22,8 +22,6 @@
         <td><%= quote.quote_cents %></td>
         <td><%= quote.quote_currency %></td>
         <td><%= link_to 'Show', quote %></td>
-        <td><%= link_to 'Edit', edit_quote_path(quote) %></td>
-        <td><%= link_to 'Destroy', quote, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
