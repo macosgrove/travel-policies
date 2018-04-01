@@ -2,7 +2,8 @@ class CalculateQuote
   include Interactor
 
   def call
-    context.quote_cents = lookup_quote(context.age, context.trip_length)
+    quote = context.quote
+    quote.quote_cents = lookup_quote(quote.age, quote.trip_length)
   end
 
   private
@@ -29,6 +30,8 @@ class CalculateQuote
 
   def lookup_quote(age, length)
     matching_rows = QUOTE_TABLE.select { |row| row.min_length <= length && row.max_length >= length && row.min_age <= age && row.max_age >= age }
+    context.fail!(error: I18n.t('no_quote', age: age, length: length)) if matching_rows.empty?
+    raise RuntimeError.new("Overlapping quotes! Coding error in calculate_quote!") unless matching_rows.count == 1 # should NEVER happen!
     matching_rows.first.quote_cents
   end
 end
