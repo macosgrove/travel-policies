@@ -1,0 +1,20 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'pathname'
+
+def system!(*args)
+  system(*args) || abort("\n== Command #{args} failed ==")
+end
+
+APP_ROOT = Pathname.new File.expand_path('..', __dir__)
+Dir.chdir(APP_ROOT) do
+  puts "\n== Running Rubocop =="
+  system! 'rubocop'
+
+  puts "\n== Running unit tests =="
+  system! 'bin/rails test'
+
+  puts "\n== Running system tests =="
+  system! 'bin/rails test:system'
+end
