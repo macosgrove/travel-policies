@@ -44,6 +44,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'rubocop', require: false
   gem 'selenium-webdriver'
+  gem 'simplecov'
 end
 
 group :development do

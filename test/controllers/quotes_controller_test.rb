@@ -21,13 +21,28 @@ class QuotesControllerTest < ActionDispatch::IntegrationTest
     assert_difference('Quote.count') do
       post quotes_url, params: { quote: {
         age: @quote.age,
-        quote_cents: @quote.quote_cents,
-        quote_currency: @quote.quote_currency,
         trip_length: @quote.trip_length
       } }
     end
 
     assert_redirected_to quote_url(Quote.last)
+  end
+
+  test 'should not save the quote and flash an error message if the quote builder fails' do
+    mock_organizer_response = Minitest::Mock.new
+    mock_organizer_response.expect :success?, false
+    mock_organizer_response.expect :error, 'error message'
+    mock_organizer_response.expect :quote, @quote
+
+    BuildQuote.stub :call, mock_organizer_response do
+      assert_no_difference('Quote.count') do
+        post quotes_url, params: { quote: {
+          age: @quote.age,
+          trip_length: @quote.trip_length
+        } }
+      end
+      assert_equal 'error message', flash[:error]
+    end
   end
 
   test 'should show quote' do
