@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180322024915) do
+ActiveRecord::Schema.define(version: 20_180_331_030_345) do
 
   create_table "quotes", force: :cascade do |t|
     t.integer "age"
-    t.decimal "trip_length"
+    t.integer "trip_length"
     t.integer "quote_cents"
     t.string "quote_currency"
     t.datetime "created_at", null: false

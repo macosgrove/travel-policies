@@ -22,6 +22,18 @@ rails test:system
 rails test
 ```
 
+## Run rubocop
+
+```shell
+rubocop
+```
+
+## Run rubocop and all tests
+
+```shell
+./bin/test
+```
+
 ## Run the app locally
 
 ```shell

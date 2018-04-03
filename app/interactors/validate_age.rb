@@ -1,13 +1,11 @@
+# frozen_string_literal: true
+
 class ValidateAge
   include Interactor
 
   def call
-    if context.age < 18
-      context.fail!(error: I18n.t('too_young'))
-    end
+    context.fail!(error: I18n.t('too_young')) if context.age < 18
 
-    if context.age > 69
-      context.fail!(error: I18n.t('too_old'))
-    end
+    context.fail!(error: I18n.t('too_old')) if context.age > 69
   end
 end
