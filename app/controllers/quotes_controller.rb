@@ -54,6 +54,6 @@ class QuotesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def quote_params
-    params.require(:quote).permit(:age, :trip_length, :quote_cents, :quote_currency)
+    params.require(:quote).permit(:age, :trip_starts_at, :trip_ends_at)
   end
 end

@@ -2,12 +2,8 @@
 
 one:
   age: 27
-  trip_length: 15
-  quote_cents: 60_00
-  quote_currency: AUD
-
-two:
-  age: 18
-  trip_length: 8
+  trip_starts_at: 2018-04-02 23:55
+  trip_ends_at: 2018-04-04 00:05
+  trip_length: 1.16666667
   quote_cents: 60_00
   quote_currency: AUD

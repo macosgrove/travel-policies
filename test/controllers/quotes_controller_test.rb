@@ -19,10 +19,13 @@ class QuotesControllerTest < ActionDispatch::IntegrationTest
 
   test 'should create quote' do
     assert_difference('Quote.count') do
-      post quotes_url, params: { quote: {
-        age: @quote.age,
-        trip_length: @quote.trip_length
-      } }
+      post quotes_url, params: {
+        quote: {
+          age: @quote.age,
+          trip_starts_at: @quote.trip_starts_at,
+          trip_ends_at: @quote.trip_ends_at
+        }
+      }
     end
 
     assert_redirected_to quote_url(Quote.last)
