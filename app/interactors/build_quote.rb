@@ -3,5 +3,5 @@
 class BuildQuote
   include Interactor::Organizer
 
-  organize CreateQuote, ValidateAge, CalculateQuote, SaveQuote
+  organize CreateQuote, ValidateAge, CalculateTripLength, CalculateQuote, SaveQuote
 end

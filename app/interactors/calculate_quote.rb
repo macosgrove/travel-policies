@@ -5,7 +5,7 @@ class CalculateQuote
 
   def call
     quote = context.quote
-    integer_trip_length = quote.trip_length.to_i
+    integer_trip_length = quote.trip_length.round
     quote.quote_cents = lookup_quote(quote.age, integer_trip_length)
   end
 

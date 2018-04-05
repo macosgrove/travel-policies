@@ -9,7 +9,7 @@ en:
   trip_starts_at: 'When does your trip start?'
   trip_ends_at: 'When does your trip end?'
   get_quote: 'Get Quote'
-  give_quote: "A trip of %{trip_length} for a traveller aged %{traveller_age} will cost %{formatted_quote}"
+  give_quote: "A trip of %{trip_length} days for a traveller aged %{traveller_age} will cost %{formatted_quote}"
   give_quote_heading: "Here's your quote"
   too_young: 'Sorry, travellers under the age of 18 are not covered by our policy'
   too_old: 'Sorry, travellers over the age of 69 are not covered by our policy'
