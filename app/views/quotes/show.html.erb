@@ -4,7 +4,7 @@
 
 <p>
   <%= t('give_quote',
-         trip_length: min_days_to_trip_length_description(@quote.trip_length).downcase,
+         trip_length: @quote.trip_length.round,
          traveller_age: @quote.age,
          formatted_quote: @quote.formatted_quote) %>
 </p>

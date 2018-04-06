@@ -71,6 +71,11 @@ class CalculateQuoteTest < ActiveSupport::TestCase
     end
   end
 
+  test 'rounds to the nearest whole day when the trip length is not an integer' do
+    quote = CalculateQuote.call(quote: Quote.new(age: 18, trip_length: 7.5, quote_currency: 'AUD')).quote
+    assert_equal 60_00, quote.quote_cents
+  end
+
   test 'fails if the quote is not found' do
     result = CalculateQuote.call(quote: Quote.new(age: 0, trip_length: 0, quote_currency: 'AUD'))
     assert_equal 'No quote available for age 0, trip length 0.', result.error

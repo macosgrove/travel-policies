@@ -6,7 +6,8 @@ class CreateQuote
   def call
     context.quote = Quote.new(
       age: context.age,
-      trip_length: context.trip_length,
+      trip_starts_at: context.trip_starts_at,
+      trip_ends_at: context.trip_ends_at,
       quote_currency: context.quote_currency
     )
   end
