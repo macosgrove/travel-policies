@@ -5,11 +5,11 @@
 <table>
   <thead>
     <tr>
-      <th>Quote</th>
       <th>Age</th>
-      <th>Trip length</th>
-      <th>Quote cents</th>
-      <th>Quote currency</th>
+      <th>Trip start</th>
+      <th>Trip end</th>
+      <th>Trip length (days)</th>
+      <th>Quote</th>
       <th></th>
     </tr>
   </thead>
@@ -18,9 +18,10 @@
     <% @quotes.each do |quote| %>
       <tr>
         <td><%= quote.age %></td>
-        <td><%= quote.trip_length %></td>
-        <td><%= quote.quote_cents %></td>
-        <td><%= quote.quote_currency %></td>
+        <td><%= quote.trip_starts_at.strftime('%Y-%m-%d %H:%M') %></td>
+        <td><%= quote.trip_ends_at.strftime('%Y-%m-%d %H:%M') %></td>
+        <td><%= quote.trip_length.round(2) %></td>
+        <td><%= quote.formatted_quote %></td>
         <td><%= link_to 'Show', quote %></td>
       </tr>
     <% end %>
