@@ -4,8 +4,16 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :age, t(:age_of_traveller) %>
-    <%= form.number_field :age, id: :quote_age %>
+    <%= form.label :date_of_birth, t(:date_of_birth) %>
+    <%= date_select(
+            :quote,
+            :date_of_birth,
+            id: :quote_date_of_birth,
+            default: 43.years.ago,
+            start_year: 69.years.ago.year,
+            end_year: 17.years.ago.year,
+            order: [:day, :month, :year])
+    %>
   </div>
 
   <div class="field">

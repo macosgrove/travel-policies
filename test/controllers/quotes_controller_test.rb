@@ -21,7 +21,7 @@ class QuotesControllerTest < ActionDispatch::IntegrationTest
     assert_difference('Quote.count') do
       post quotes_url, params: {
         quote: {
-          age: @quote.age,
+          date_of_birth: @quote.date_of_birth,
           trip_starts_at: @quote.trip_starts_at,
           trip_ends_at: @quote.trip_ends_at
         }
