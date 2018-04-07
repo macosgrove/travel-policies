@@ -5,7 +5,7 @@ class CreateQuote
 
   def call
     context.quote = Quote.new(
-      age: context.age,
+      date_of_birth: context.date_of_birth,
       trip_starts_at: context.trip_starts_at,
       trip_ends_at: context.trip_ends_at,
       quote_currency: context.quote_currency
