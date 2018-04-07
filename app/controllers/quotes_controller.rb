@@ -21,8 +21,7 @@ class QuotesController < ApplicationController
   # POST /quotes
   # POST /quotes.json
   def create
-    result = BuildQuote.call(quote_params.merge(quote_currency: 'AUD'))
-    # Eventually currency will be selected by the user
+    result = BuildQuote.call(quote_model_params(quote_params))
 
     respond_to do |format|
       @quote = result.quote
@@ -45,6 +44,18 @@ class QuotesController < ApplicationController
     flash[:error] = error
     format.html { render :new }
     format.json { render json: error, status: :unprocessable_entity }
+  end
+
+  def quote_model_params(quote_params)
+    {}.tap do |params|
+      year = quote_params['date_of_birth(1i)']
+      month = quote_params['date_of_birth(2i)']
+      day = quote_params['date_of_birth(3i)']
+      params[:date_of_birth] = "#{year}-#{month}-#{day}"
+      params[:trip_starts_at] = quote_params['trip_starts_at']
+      params[:trip_ends_at] = quote_params['trip_ends_at']
+      params[:quote_currency] = 'AUD' # Eventually currency will be selected by the user
+    end
   end
 
   # Use callbacks to share common setup or constraints between actions.
