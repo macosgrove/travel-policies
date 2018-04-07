@@ -1,7 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  age: 27
+  date_of_birth: 1991-05-02
   trip_starts_at: 2018-04-02 23:55
   trip_ends_at: 2018-04-04 00:05
   trip_length: 1.16666667

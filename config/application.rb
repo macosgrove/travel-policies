@@ -17,5 +17,9 @@ module TravelPolicies
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
     config.autoload_paths += Dir[Rails.root.join('app/interactors')]
+
+    # For now all times will be assumed to be UTC
+    config.time_zone = 'UTC'
+    config.active_record.default_timezone = :utc
   end
 end

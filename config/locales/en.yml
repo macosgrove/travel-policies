@@ -5,7 +5,7 @@ en:
     _8_to_14: '8 to 14 days'
     _15_to_21: '15 to 21 days'
     over_21: '22 days or over'
-  age_of_traveller: 'Age of Traveller'
+  date_of_birth: 'What is your date of birth?'
   trip_starts_at: 'When does your trip start?'
   trip_ends_at: 'When does your trip end?'
   get_quote: 'Get Quote'
