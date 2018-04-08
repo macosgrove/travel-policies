@@ -8,6 +8,13 @@ en:
   date_of_birth: 'What is your date of birth?'
   trip_starts_at: 'When does your trip start?'
   trip_ends_at: 'When does your trip end?'
+  trip_start_date: 'Trip start date'
+  trip_end_date: 'Trip end date'
+  cant_be_blank: "%{field} can't be blank"
+  must_be_future: '%{field} must be in the future'
+  must_be_after: '%{field2} must be after %{field1}'
+  trip_max_future: 'Trip start date must be within a year from now'
+  trip_max_length: 'Sorry, we only cover trips up to one year long'
   get_quote: 'Get Quote'
   give_quote: "A trip of %{trip_length} days for a traveller aged %{traveller_age} will cost %{formatted_quote}"
   give_quote_heading: "Here's your quote"
